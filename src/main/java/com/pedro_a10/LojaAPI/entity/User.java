@@ -44,5 +44,5 @@ public class User {
   @CPF(message = "Invalid CPF")
   private String CPF;
 
-  private boolean isEmployee;
+  private boolean isEmployee = false;
 }

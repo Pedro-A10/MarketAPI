@@ -2,7 +2,9 @@ package com.pedro_a10.LojaAPI.entity;
 
 import com.pedro_a10.LojaAPI.enums.ProductType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +22,12 @@ public class Product {
   @NotEmpty
   private String name;
 
-  @NotEmpty
+  @NotNull
+  @Min(1)
+  private Integer quantity;
+
+  @NotNull
+  @Min(0)
   private Integer priceInCents;
 
   private byte[] image;
