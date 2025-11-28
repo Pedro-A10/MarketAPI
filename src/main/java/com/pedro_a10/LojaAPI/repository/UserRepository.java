@@ -18,8 +18,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
   boolean existsByEmail(String email);
 
   @Query("SELECT u FROM User u WHERE u.isEmployee = false")
-  List<User> listUserClient();
+  List<User> findUserClient();
 
   @Query("SELECT u FROM User u WHERE u.isEmployee = true")
-  List<User> listUserEmployee();
+  List<User> findUserEmployee();
 }

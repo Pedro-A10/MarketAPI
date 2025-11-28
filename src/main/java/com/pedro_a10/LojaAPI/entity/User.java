@@ -1,9 +1,6 @@
 package com.pedro_a10.LojaAPI.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +11,7 @@ import org.hibernate.validator.constraints.br.CPF;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "users")
 public class User {
 
   @Id
@@ -42,7 +40,7 @@ public class User {
 
   @NotBlank(message = "CPF is required")
   @CPF(message = "Invalid CPF")
-  private String CPF;
+  private String cpf;
 
   private boolean isEmployee = false;
 }

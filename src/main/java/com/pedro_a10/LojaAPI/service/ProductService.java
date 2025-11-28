@@ -23,12 +23,12 @@ public class ProductService {
     return productRepository.findByName(name);
   }
 
-  public List<Product> listByPriceInCents(Integer priceInCents) {
-    return productRepository.listByPrice(priceInCents);
+  public List<Product> findByPriceInCents(Integer priceInCents) {
+    return productRepository.findByPriceInCents(priceInCents);
   }
 
-  public List<Product> ListAllByType(ProductType type) {
-    return productRepository.ListAllByType(type);
+  public List<Product> findAllByType(ProductType type) {
+    return productRepository.findAllByType(type);
   }
 
   public Product createProduct(Product product) {

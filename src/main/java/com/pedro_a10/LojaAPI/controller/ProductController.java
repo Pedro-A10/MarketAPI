@@ -29,12 +29,12 @@ public class ProductController {
 
   @GetMapping("/prices")
   public List<Product> listByPriceInCents(@RequestParam Integer price) {
-    return productService.listByPriceInCents(price);
+    return productService.findByPriceInCents(price);
   }
 
   @GetMapping("/types")
   public List<Product> listAllByType(@RequestParam ProductType type) {
-    return productService.ListAllByType(type);
+    return productService.findAllByType(type);
   }
 
   @PostMapping

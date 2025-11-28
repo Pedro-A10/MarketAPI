@@ -16,9 +16,6 @@ public class UserService {
   @Autowired
   UserRepository userRepository;
 
-  @Autowired
-  PasswordEncoder passwordEncoder;
-
   public Optional<User> findById(Long id) {
     return userRepository.findById(id);
   }
@@ -32,11 +29,11 @@ public class UserService {
   }
 
   public List<User> getAllClients() {
-    return userRepository.listUserClient();
+    return userRepository.findUserClient();
   }
 
   public List<User> getAllEmployees() {
-    return userRepository.listUserEmployee();
+    return userRepository.findUserEmployee();
   }
 
   public User createUser(@Valid User user){
