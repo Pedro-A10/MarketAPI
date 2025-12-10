@@ -9,6 +9,7 @@ import com.pedro_a10.Marketplace.entity.User;
 import com.pedro_a10.Marketplace.mapper.UserMapper;
 import com.pedro_a10.Marketplace.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,11 +23,8 @@ public class UserService {
   @Autowired
   UserMapper userMapper;
 
-  /*
-  off until config package is create
   @Autowired
   private PasswordEncoder passwordEncoder;
-  */
 
   public UserResponseDTO findById(Long id) {
     User user = userRepository.findById(id)
@@ -54,7 +52,7 @@ public class UserService {
     }
 
     User users = userMapper.toEntity(userRequestDTO);
-    //users.setPassword(passwordEncoder.encode(users.getPassword()));
+    users.setPassword(passwordEncoder.encode(users.getPassword()));
     User saveUser = userRepository.save(users);
     return userMapper.toResponseDTO(saveUser);
   }

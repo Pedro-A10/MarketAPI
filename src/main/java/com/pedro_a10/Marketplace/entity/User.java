@@ -22,10 +22,12 @@ public class User {
   @Size(min = 15, max = 100, message = "Username must be 15 to 20 characters long")
   @Pattern(regexp = "^[A-Za-zÀ-ú]+(\\s[A-Za-zÀ-ú]+)+$",
     message = "Please provide your full name (first and last name).")
+  @Column(unique = true)
   private String username;
 
   @NotEmpty
   @Email
+  @Column(unique = true)
   private String email;
 
   @NotBlank(message = "Password is required")
