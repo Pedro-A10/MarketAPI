@@ -11,7 +11,7 @@
 	<groupId>com.pedro-a10</groupId>
 	<artifactId>Marketplace</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LojaAPI</name>
+	<name>Marketplace</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
